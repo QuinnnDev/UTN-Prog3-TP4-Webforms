@@ -12,7 +12,7 @@ namespace TP4_Grupo_8
     public partial class ejercicio1 : System.Web.UI.Page
     {
         //private const string cadenaConexion = @" Data Source = DESKTOP - CCJO3LV\SQLEXPRESS; Initial Catalog = Neptuno; Integrated Security = True";
-        string cadenaConexion = "Data Source=localhost\\sqlexpress;Initial Catalog=Viajes;Integrated Security = True";
+        string cadenaConexion = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=Viajes;Integrated Security = True";
         private string consultaSQL = "SELECT * FROM Provincias";
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -29,6 +29,66 @@ namespace TP4_Grupo_8
                 ddlProvinciaInicio.DataTextField = "NombreProvincia";
                 ddlProvinciaInicio.DataValueField = "IdProvincia";
                 ddlProvinciaInicio.DataBind();
+            }
+        }
+
+        protected void ddlProvinciaInicio_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ddlProvinciaInicio.SelectedIndex != 0)
+            {
+
+                SqlConnection connection = new SqlConnection(cadenaConexion);
+                connection.Open();
+
+                string provinciaSeleccionada = ddlProvinciaInicio.SelectedItem.Value;
+
+                SqlCommand command = new SqlCommand("SELECT * FROM Localidades WHERE IdProvincia = " + provinciaSeleccionada, connection);
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                ddlLocalidadInicio.DataSource = reader;
+                ddlLocalidadInicio.DataTextField = "NombreLocalidad";
+                ddlLocalidadInicio.DataValueField = "IdLocalidad";
+                ddlLocalidadInicio.DataBind();
+                ddlLocalidadInicio.Items.Insert(0, new ListItem("-- SELECCIONE LOCALIDAD --", "0"));
+                
+                
+
+                connection.Close();
+            }
+            else
+            {
+                ddlLocalidadInicio.Items.Clear();
+            }
+}
+
+        protected void ddlProvinciaFinal_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ddlProvinciaFinal.SelectedIndex != 0)
+            {
+
+                SqlConnection connection = new SqlConnection(cadenaConexion);
+                connection.Open();
+
+                string provinciaSeleccionada = ddlProvinciaFinal.SelectedItem.Value;
+
+                SqlCommand command = new SqlCommand("SELECT * FROM Localidades WHERE IdProvincia = " + provinciaSeleccionada, connection);
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                ddlLocalidadFinal.DataSource = reader;
+                ddlLocalidadFinal.DataTextField = "NombreLocalidad";
+                ddlLocalidadFinal.DataValueField = "IdLocalidad";
+                ddlLocalidadFinal.DataBind();
+                ddlLocalidadFinal.Items.Insert(0, new ListItem("-- SELECCIONE LOCALIDAD --", "0"));
+
+
+
+                connection.Close();
+            }
+            else
+            {
+                ddlLocalidadFinal.Items.Clear();
             }
         }
     }

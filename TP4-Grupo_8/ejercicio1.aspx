@@ -58,7 +58,7 @@
                         <asp:Label ID="lblProvinciaInicio" runat="server" Font-Bold="True" Text="PROVINCIA:"></asp:Label>
                     </td>
                     <td class="auto-style2">
-                        <asp:DropDownList ID="ddlProvinciaInicio" runat="server">
+                        <asp:DropDownList ID="ddlProvinciaInicio" runat="server" AutoPostBack="True" Height="22px" OnSelectedIndexChanged="ddlProvinciaInicio_SelectedIndexChanged" Width="209px">
                         </asp:DropDownList>
                     </td>
                     <td class="auto-style2"></td>
@@ -75,7 +75,7 @@
                         <asp:Label ID="lblLocalidadInicio" runat="server" Font-Bold="True" Text="LOCALIDAD:"></asp:Label>
                     </td>
                     <td>
-                        <asp:DropDownList ID="ddlLocalidadInicio" runat="server">
+                        <asp:DropDownList ID="ddlLocalidadInicio" runat="server" Height="17px" Width="207px">
                         </asp:DropDownList>
                     </td>
                     <td>&nbsp;</td>
@@ -130,7 +130,7 @@
                         <asp:Label ID="lblProvinciaFinal" runat="server" Font-Bold="True" Text="PROVINCIA:"></asp:Label>
                     </td>
                     <td>
-                        <asp:DropDownList ID="ddlProvinciaFinal" runat="server">
+                        <asp:DropDownList ID="ddlProvinciaFinal" runat="server" AutoPostBack="True" Height="16px" OnSelectedIndexChanged="ddlProvinciaFinal_SelectedIndexChanged" Width="214px">
                         </asp:DropDownList>
                     </td>
                     <td>&nbsp;</td>
@@ -147,7 +147,7 @@
                         <asp:Label ID="lblLocalidadFinal" runat="server" Font-Bold="True" Text="LOCALIDAD:"></asp:Label>
                     </td>
                     <td>
-                        <asp:DropDownList ID="ddlLocalidadFinal" runat="server">
+                        <asp:DropDownList ID="ddlLocalidadFinal" runat="server" Height="16px" Width="211px">
                         </asp:DropDownList>
                     </td>
                     <td>&nbsp;</td>
