@@ -29,7 +29,6 @@ namespace TP4_Grupo_8
                 ddlProvinciaInicio.DataTextField = "NombreProvincia";
                 ddlProvinciaInicio.DataValueField = "IdProvincia";
                 ddlProvinciaInicio.DataBind();
-
                 ddlProvinciaInicio.Items.Insert(0, new ListItem("SELECCIONE PROVINCIA", "0"));
 
                 sqlDataReader.Close();
