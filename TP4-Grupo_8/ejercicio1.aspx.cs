@@ -12,7 +12,7 @@ namespace TP4_Grupo_8
     public partial class ejercicio1 : System.Web.UI.Page
     {
         //private const string cadenaConexion = @" Data Source = DESKTOP - CCJO3LV\SQLEXPRESS; Initial Catalog = Neptuno; Integrated Security = True";
-        string cadenaConexion = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=Viajes;Integrated Security = True";
+        string cadenaConexion = "Data Source=localhost\\SQLEXPRESS01;Initial Catalog=Viajes;Integrated Security = True";
         private string consultaSQL = "SELECT * FROM Provincias";
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -29,6 +29,19 @@ namespace TP4_Grupo_8
                 ddlProvinciaInicio.DataTextField = "NombreProvincia";
                 ddlProvinciaInicio.DataValueField = "IdProvincia";
                 ddlProvinciaInicio.DataBind();
+
+                ddlProvinciaInicio.Items.Insert(0, new ListItem("SELECCIONE PROVINCIA", "0"));
+
+                sqlDataReader.Close();
+                sqlDataReader = sqlCommand.ExecuteReader();
+
+                ddlProvinciaFinal.DataSource = sqlDataReader;
+                ddlProvinciaFinal.DataTextField = "NombreProvincia";
+                ddlProvinciaFinal.DataValueField = "IdProvincia";
+                ddlProvinciaFinal.DataBind();
+                ddlProvinciaFinal.Items.Insert(0, new ListItem("SELECCIONE PROVINCIA", "0"));
+
+                connection.Close();
             }
         }
 
