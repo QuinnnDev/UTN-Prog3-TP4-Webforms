@@ -96,7 +96,7 @@
                         <asp:Label ID="lblLocalidadInicio" runat="server" Font-Bold="True" Text="LOCALIDAD:"></asp:Label>
                     </td>
                     <td class="auto-style7">
-                        <asp:DropDownList ID="ddlLocalidadInicio" runat="server" Height="17px" Width="207px" Enabled="False" OnSelectedIndexChanged="ddlLocalidadInicio_SelectedIndexChanged">
+                        <asp:DropDownList ID="ddlLocalidadInicio" runat="server" Height="17px" Width="207px" Enabled="False" OnSelectedIndexChanged="ddlLocalidadInicio_SelectedIndexChanged" AutoPostBack="True">
                         </asp:DropDownList>
                     </td>
                     <td>
@@ -172,7 +172,7 @@
                         <asp:Label ID="lblLocalidadFinal" runat="server" Font-Bold="True" Text="LOCALIDAD:"></asp:Label>
                     </td>
                     <td class="auto-style7">
-                        <asp:DropDownList ID="ddlLocalidadFinal" runat="server" Height="16px" Width="211px" Enabled="False" OnSelectedIndexChanged="ddlLocalidadFinal_SelectedIndexChanged">
+                        <asp:DropDownList ID="ddlLocalidadFinal" runat="server" Height="16px" Width="211px" Enabled="False" OnSelectedIndexChanged="ddlLocalidadFinal_SelectedIndexChanged" AutoPostBack="True">
                         </asp:DropDownList>
                     </td>
                     <td>
@@ -199,7 +199,9 @@
                 </tr>
                 <tr>
                     <td class="auto-style5"></td>
-                    <td class="auto-style6">&nbsp;</td>
+                    <td class="auto-style6">
+                        <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="vsDestino" />
+                    </td>
                     <td class="auto-style9">&nbsp;</td>
                     <td class="auto-style5"></td>
                     <td class="auto-style5"></td>
