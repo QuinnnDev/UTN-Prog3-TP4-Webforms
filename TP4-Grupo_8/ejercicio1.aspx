@@ -75,7 +75,7 @@
                         <asp:Label ID="lblLocalidadInicio" runat="server" Font-Bold="True" Text="LOCALIDAD:"></asp:Label>
                     </td>
                     <td>
-                        <asp:DropDownList ID="ddlLocalidadInicio" runat="server" Height="17px" Width="207px">
+                        <asp:DropDownList ID="ddlLocalidadInicio" runat="server" Height="17px" Width="207px" Enabled="False">
                         </asp:DropDownList>
                     </td>
                     <td>&nbsp;</td>
@@ -147,7 +147,7 @@
                         <asp:Label ID="lblLocalidadFinal" runat="server" Font-Bold="True" Text="LOCALIDAD:"></asp:Label>
                     </td>
                     <td>
-                        <asp:DropDownList ID="ddlLocalidadFinal" runat="server" Height="16px" Width="211px">
+                        <asp:DropDownList ID="ddlLocalidadFinal" runat="server" Height="16px" Width="211px" Enabled="False">
                         </asp:DropDownList>
                     </td>
                     <td>&nbsp;</td>

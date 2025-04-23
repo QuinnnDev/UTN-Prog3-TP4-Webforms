@@ -12,9 +12,11 @@ namespace TP4_Grupo_8
     public partial class ejercicio1 : System.Web.UI.Page
     {
         //private const string cadenaConexion = @" Data Source = DESKTOP - CCJO3LV\SQLEXPRESS; Initial Catalog = Neptuno; Integrated Security = True";
-        string cadenaConexion = "Data Source=localhost\\SQLEXPRESS01;Initial Catalog=Viajes;Integrated Security = True";
+        // string cadenaConexion = "Data Source=localhost\\SQLEXPRESS01;Initial Catalog=Viajes;Integrated Security = True";
+        string cadenaConexion = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=Viajes;Integrated Security=True;Encrypt=False";
         private string consultaSQL = "SELECT * FROM Provincias";
         protected void Page_Load(object sender, EventArgs e)
+
         {
 
             if (!IsPostBack)
@@ -48,7 +50,7 @@ namespace TP4_Grupo_8
         {
             if (ddlProvinciaInicio.SelectedIndex != 0)
             {
-
+                ddlLocalidadInicio.Enabled = true;
                 SqlConnection connection = new SqlConnection(cadenaConexion);
                 connection.Open();
 
@@ -87,7 +89,7 @@ namespace TP4_Grupo_8
         {
             if (ddlProvinciaFinal.SelectedIndex != 0)
             {
-
+                ddlLocalidadFinal.Enabled = true;
                 SqlConnection connection = new SqlConnection(cadenaConexion);
                 connection.Open();
 
