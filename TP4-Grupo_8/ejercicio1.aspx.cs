@@ -82,6 +82,7 @@ namespace TP4_Grupo_8
             if (ddlProvinciaFinal.SelectedValue == ddlProvinciaInicio.SelectedValue)
             {
                 ddlProvinciaFinal.SelectedIndex = 0;
+                ddlLocalidadFinal.Items.Clear();
             }
 
             Page.Validate();
@@ -116,6 +117,18 @@ namespace TP4_Grupo_8
                 ddlLocalidadFinal.Items.Clear();
               
             }
+            Page.Validate();
+        }
+
+
+
+        protected void ddlLocalidadFinal_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Page.Validate();
+        }
+
+        protected void ddlLocalidadInicio_SelectedIndexChanged(object sender, EventArgs e)
+        {
             Page.Validate();
         }
     }
