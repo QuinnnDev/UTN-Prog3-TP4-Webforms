@@ -136,16 +136,16 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td>&nbsp;</td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td class="auto-style7">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style2"></td>
+                    <td class="auto-style4"></td>
+                    <td class="auto-style8"></td>
+                    <td class="auto-style2"></td>
+                    <td class="auto-style2"></td>
+                    <td class="auto-style2"></td>
+                    <td class="auto-style2"></td>
+                    <td class="auto-style2"></td>
+                    <td class="auto-style2"></td>
+                    <td class="auto-style2"></td>
                 </tr>
                 <tr>
                     <td>&nbsp;</td>
@@ -175,7 +175,9 @@
                         <asp:DropDownList ID="ddlLocalidadFinal" runat="server" Height="16px" Width="211px" Enabled="False" OnSelectedIndexChanged="ddlLocalidadFinal_SelectedIndexChanged">
                         </asp:DropDownList>
                     </td>
-                    <td>&nbsp;</td>
+                    <td>
+                        <asp:RequiredFieldValidator ID="rfvLocalidadFinal" runat="server" ControlToValidate="ddlLocalidadFinal" ErrorMessage="seleccione una localidad final" ForeColor="Red" InitialValue="0" ValidateRequestMode="Disabled" ValidationGroup="vsDestino" EnableTheming="True">* </asp:RequiredFieldValidator>
+                    </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>

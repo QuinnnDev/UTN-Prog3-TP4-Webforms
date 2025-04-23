@@ -13,7 +13,7 @@ namespace TP4_Grupo_8
     {
         //private const string cadenaConexion = @" Data Source = localhost\SQLEXPRESS; Initial Catalog = Neptuno; Integrated Security = True";
         //string cadenaConexion = "Data Source=localhost\\SQLEXPRESS01;Initial Catalog=Viajes;Integrated Security = True";
-        string cadenaConexion = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=Viajes;Integrated Security=True;Encrypt=False";
+        string cadenaConexion = "Data Source=PASTRAMI\\SQLEXPRESS;Initial Catalog=Viajes;Integrated Security=True;Encrypt=False";
         private string consultaSQL = "SELECT * FROM Provincias";
         protected void Page_Load(object sender, EventArgs e)
         {
