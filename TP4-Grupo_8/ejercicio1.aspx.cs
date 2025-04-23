@@ -11,13 +11,13 @@ namespace TP4_Grupo_8
 {
     public partial class ejercicio1 : System.Web.UI.Page
     {
-        //private const string cadenaConexion = @" Data Source = DESKTOP - CCJO3LV\SQLEXPRESS; Initial Catalog = Neptuno; Integrated Security = True";
-        // string cadenaConexion = "Data Source=localhost\\SQLEXPRESS01;Initial Catalog=Viajes;Integrated Security = True";
+        //private const string cadenaConexion = @" Data Source = localhost\SQLEXPRESS; Initial Catalog = Neptuno; Integrated Security = True";
+        //string cadenaConexion = "Data Source=localhost\\SQLEXPRESS01;Initial Catalog=Viajes;Integrated Security = True";
         string cadenaConexion = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=Viajes;Integrated Security=True;Encrypt=False";
         private string consultaSQL = "SELECT * FROM Provincias";
         protected void Page_Load(object sender, EventArgs e)
-
         {
+            ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
 
             if (!IsPostBack)
             {
@@ -83,6 +83,8 @@ namespace TP4_Grupo_8
             {
                 ddlProvinciaFinal.SelectedIndex = 0;
             }
+
+            Page.Validate();
         }
 
         protected void ddlProvinciaFinal_SelectedIndexChanged(object sender, EventArgs e)
@@ -112,7 +114,9 @@ namespace TP4_Grupo_8
             else
             {
                 ddlLocalidadFinal.Items.Clear();
+              
             }
+            Page.Validate();
         }
     }
 }

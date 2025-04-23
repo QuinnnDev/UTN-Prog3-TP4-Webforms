@@ -20,11 +20,19 @@
             height: 23px;
             width: 149px;
         }
+        .auto-style5 {
+            height: 54px;
+        }
+        .auto-style6 {
+            width: 149px;
+            height: 54px;
+        }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
+        </div>
             <table class="auto-style1">
                 <tr>
                     <td>&nbsp;</td>
@@ -132,6 +140,7 @@
                     <td>
                         <asp:DropDownList ID="ddlProvinciaFinal" runat="server" AutoPostBack="True" Height="16px" OnSelectedIndexChanged="ddlProvinciaFinal_SelectedIndexChanged" Width="214px">
                         </asp:DropDownList>
+                        <asp:RequiredFieldValidator ID="rfvProvinciaFinal" runat="server" ControlToValidate="ddlProvinciaFinal" ErrorMessage="seleccione una provincia final " ForeColor="Red" InitialValue="0" ValidateRequestMode="Disabled" ValidationGroup="vsDestino">* </asp:RequiredFieldValidator>
                     </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
@@ -170,8 +179,19 @@
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
+                <tr>
+                    <td class="auto-style5"></td>
+                    <td class="auto-style6">&nbsp;</td>
+                    <td class="auto-style5">&nbsp;</td>
+                    <td class="auto-style5"></td>
+                    <td class="auto-style5"></td>
+                    <td class="auto-style5"></td>
+                    <td class="auto-style5"></td>
+                    <td class="auto-style5"></td>
+                    <td class="auto-style5"></td>
+                    <td class="auto-style5"></td>
+                </tr>
             </table>
-        </div>
     </form>
 </body>
 </html>

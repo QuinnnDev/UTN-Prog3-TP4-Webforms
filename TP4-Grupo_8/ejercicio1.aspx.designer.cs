@@ -96,6 +96,15 @@ namespace TP4_Grupo_8
         protected global::System.Web.UI.WebControls.DropDownList ddlProvinciaFinal;
 
         /// <summary>
+        /// Control rfvProvinciaFinal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvProvinciaFinal;
+
+        /// <summary>
         /// Control lblLocalidadFinal.
         /// </summary>
         /// <remarks>
