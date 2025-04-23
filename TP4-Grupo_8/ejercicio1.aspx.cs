@@ -63,8 +63,8 @@ namespace TP4_Grupo_8
                 ddlLocalidadInicio.DataValueField = "IdLocalidad";
                 ddlLocalidadInicio.DataBind();
                 ddlLocalidadInicio.Items.Insert(0, new ListItem("-- SELECCIONE LOCALIDAD --", "0"));
-                
-                
+
+
 
                 connection.Close();
             }
@@ -72,7 +72,16 @@ namespace TP4_Grupo_8
             {
                 ddlLocalidadInicio.Items.Clear();
             }
-}
+
+            foreach (ListItem item in ddlProvinciaFinal.Items)
+            {
+                item.Enabled = !(ddlProvinciaInicio.SelectedValue != "0" && item.Value == ddlProvinciaInicio.SelectedValue);
+            }
+            if (ddlProvinciaFinal.SelectedValue == ddlProvinciaInicio.SelectedValue)
+            {
+                ddlProvinciaFinal.SelectedIndex = 0;
+            }
+        }
 
         protected void ddlProvinciaFinal_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -94,7 +103,7 @@ namespace TP4_Grupo_8
                 ddlLocalidadFinal.DataBind();
                 ddlLocalidadFinal.Items.Insert(0, new ListItem("-- SELECCIONE LOCALIDAD --", "0"));
 
-
+                
 
                 connection.Close();
             }
