@@ -99,7 +99,9 @@
                         <asp:DropDownList ID="ddlLocalidadInicio" runat="server" Height="17px" Width="207px" Enabled="False" OnSelectedIndexChanged="ddlLocalidadInicio_SelectedIndexChanged">
                         </asp:DropDownList>
                     </td>
-                    <td>&nbsp;</td>
+                    <td>
+                        <asp:RequiredFieldValidator ID="rfvLocalidadInicial" runat="server" ControlToValidate="ddlLocalidadInicio" ErrorMessage="seleccione una localidad inicial" ForeColor="Red" InitialValue="0" ValidateRequestMode="Disabled" ValidationGroup="vsDestino">* </asp:RequiredFieldValidator>
+                    </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
