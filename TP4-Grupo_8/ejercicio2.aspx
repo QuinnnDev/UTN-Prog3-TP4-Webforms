@@ -68,6 +68,7 @@
                                 <td class="auto-style6">
                                     <asp:DropDownList ID="DdlProducto" runat="server">
                                         <asp:ListItem Value="=">Igual a:</asp:ListItem>
+                                        <asp:ListItem Value="&gt;">Mayor a:</asp:ListItem>
                                     </asp:DropDownList>
                                 </td>
                                 <td>

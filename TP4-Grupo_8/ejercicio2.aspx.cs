@@ -50,27 +50,41 @@ namespace TP4_Grupo_8
         protected void BtnFiltrar_Click(object sender, EventArgs e)
         {
             string ConsultaSql = "SELECT * FROM Productos";
+            string tipoFiltro = DdlProducto.SelectedValue;
 
-            if(TxtCategoria.Text != string.Empty && TxtProducto.Text != string.Empty)
+
+            if (tipoFiltro == "=")
             {
-                ConsultaSql += " WHERE IdProducto = " + TxtProducto.Text + " AND IdCategoría = " + TxtCategoria.Text;
-                CargarTabla(ConsultaSql);
+
+                if (TxtCategoria.Text != string.Empty && TxtProducto.Text != string.Empty)
+                {
+                    ConsultaSql += " WHERE IdProducto = " + TxtProducto.Text + " AND IdCategoría = " + TxtCategoria.Text;
+                    CargarTabla(ConsultaSql);
+                }
+                else
+                {
+
+                    if (TxtProducto.Text != string.Empty)
+                    {
+                        ConsultaSql += " WHERE IdProducto = " + TxtProducto.Text;
+                        CargarTabla(ConsultaSql);
+                    }
+                    if (TxtCategoria.Text != string.Empty)
+                    {
+                        ConsultaSql += " WHERE IdCategoría = " + TxtCategoria.Text;
+                        CargarTabla(ConsultaSql);
+                    }
+               
+
+                }
             }
             else
             {
-
-                if (TxtProducto.Text != string.Empty)
+                if (TxtProducto.Text != string.Empty && tipoFiltro == ">")
                 {
-                    ConsultaSql += " WHERE IdProducto = " + TxtProducto.Text;
+                    ConsultaSql += " WHERE IdProducto > " + TxtProducto.Text;
                     CargarTabla(ConsultaSql);
                 }
-
-                if (TxtCategoria.Text != string.Empty)
-                {
-                    ConsultaSql += " WHERE IdCategoría = " + TxtCategoria.Text;
-                    CargarTabla(ConsultaSql);
-                }
-
             }
         }
 
