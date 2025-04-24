@@ -10,7 +10,7 @@ namespace TP4_Grupo_8
 {
     public partial class ejercicio2 : System.Web.UI.Page
     {
-        string conexion = "Data Source=localhost\\sqlexpress01;Initial Catalog=Neptuno;Integrated Security = True;Encrypt=False";
+        string conexion = "Data Source=localhost\\sqlexpress;Initial Catalog=Neptuno;Integrated Security = True;Encrypt=False";
         
         private void CargarTabla(string consultaSQL = "SELECT * FROM Productos")
         {
