@@ -61,16 +61,17 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style2">ID Producto:</td>
                     <td>
                         <table class="auto-style1">
                             <tr>
                                 <td class="auto-style6">
                                     <asp:DropDownList ID="DdlProducto" runat="server">
+                                        <asp:ListItem>Igual a:</asp:ListItem>
                                     </asp:DropDownList>
                                 </td>
                                 <td>
-                                    <asp:TextBox ID="TxtProducto" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="TxtProducto" runat="server" OnTextChanged="TxtProducto_TextChanged"></asp:TextBox>
                                 </td>
                             </tr>
                         </table>
