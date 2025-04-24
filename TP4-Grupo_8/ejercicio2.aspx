@@ -83,12 +83,13 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style3"></td>
+                    <td class="auto-style3">ID Categoria</td>
                     <td class="auto-style4">
                         <table class="auto-style1">
                             <tr>
                                 <td class="auto-style6">
                                     <asp:DropDownList ID="DdlCategoria" runat="server">
+                                        <asp:ListItem>Igual a:</asp:ListItem>
                                     </asp:DropDownList>
                                 </td>
                                 <td>

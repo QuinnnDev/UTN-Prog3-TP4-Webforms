@@ -10,7 +10,7 @@ namespace TP4_Grupo_8
 {
     public partial class ejercicio2 : System.Web.UI.Page
     {
-        string conexion = "Data Source=localhost\\sqlexpress;Initial Catalog=Neptuno;Integrated Security = True;Encrypt=False";
+        string conexion = "Data Source=localhost\\sqlexpress01;Initial Catalog=Neptuno;Integrated Security = True;Encrypt=False";
         
         private void CargarTabla(string consultaSQL = "SELECT * FROM Productos")
         {
@@ -46,9 +46,16 @@ namespace TP4_Grupo_8
         protected void BtnFiltrar_Click(object sender, EventArgs e)
         {
             string ConsultaSql = "SELECT * FROM Productos";
-            if (TxtProducto.Text != string.Empty) 
+
+            if (TxtProducto.Text != string.Empty)
             {
-                ConsultaSql += " WHERE IdProducto = "+ TxtProducto.Text;
+                ConsultaSql += " WHERE IdProducto = " + TxtProducto.Text;
+                CargarTabla(ConsultaSql);
+            }
+
+            if (TxtCategoria.Text != string.Empty)
+            {
+                ConsultaSql += " WHERE IdCategoría = " + TxtCategoria.Text;
                 CargarTabla(ConsultaSql);
             }
         }
