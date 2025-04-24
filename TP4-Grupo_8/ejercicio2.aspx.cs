@@ -47,16 +47,26 @@ namespace TP4_Grupo_8
         {
             string ConsultaSql = "SELECT * FROM Productos";
 
-            if (TxtProducto.Text != string.Empty)
+            if(TxtCategoria.Text != string.Empty && TxtProducto.Text != string.Empty)
             {
-                ConsultaSql += " WHERE IdProducto = " + TxtProducto.Text;
+                ConsultaSql += " WHERE IdProducto = " + TxtProducto.Text + " AND IdCategoría = " + TxtCategoria.Text;
                 CargarTabla(ConsultaSql);
             }
-
-            if (TxtCategoria.Text != string.Empty)
+            else
             {
-                ConsultaSql += " WHERE IdCategoría = " + TxtCategoria.Text;
-                CargarTabla(ConsultaSql);
+
+                if (TxtProducto.Text != string.Empty)
+                {
+                    ConsultaSql += " WHERE IdProducto = " + TxtProducto.Text;
+                    CargarTabla(ConsultaSql);
+                }
+
+                if (TxtCategoria.Text != string.Empty)
+                {
+                    ConsultaSql += " WHERE IdCategoría = " + TxtCategoria.Text;
+                    CargarTabla(ConsultaSql);
+                }
+
             }
         }
 

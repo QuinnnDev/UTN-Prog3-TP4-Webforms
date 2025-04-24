@@ -67,7 +67,7 @@
                             <tr>
                                 <td class="auto-style6">
                                     <asp:DropDownList ID="DdlProducto" runat="server">
-                                        <asp:ListItem>Igual a:</asp:ListItem>
+                                        <asp:ListItem Value="=">Igual a:</asp:ListItem>
                                     </asp:DropDownList>
                                 </td>
                                 <td>
@@ -89,7 +89,7 @@
                             <tr>
                                 <td class="auto-style6">
                                     <asp:DropDownList ID="DdlCategoria" runat="server">
-                                        <asp:ListItem>Igual a:</asp:ListItem>
+                                        <asp:ListItem Value="=">Igual a:</asp:ListItem>
                                     </asp:DropDownList>
                                 </td>
                                 <td>
