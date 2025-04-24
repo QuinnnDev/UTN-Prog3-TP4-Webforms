@@ -35,5 +35,15 @@ namespace TP4_Grupo_8
             }
 
         }
+
+        protected void BtnQuitar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void BtnFiltrar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
