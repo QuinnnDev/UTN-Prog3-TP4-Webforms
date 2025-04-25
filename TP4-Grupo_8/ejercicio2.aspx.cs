@@ -47,44 +47,44 @@ namespace TP4_Grupo_8
             TxtProducto.Text = "";
         }
 
+        // Este es posiblemente el peor código que leí en mi vida
         protected void BtnFiltrar_Click(object sender, EventArgs e)
         {
             string ConsultaSql = "SELECT * FROM Productos";
-            string tipoFiltro = DdlProducto.SelectedValue;
+            string tipoFiltroProducto = DdlProducto.SelectedValue;
+            string tipoFiltroCategoria = DdlCategoria.SelectedValue;
 
-
-            if (tipoFiltro == "=")
+            if (TxtCategoria.Text != string.Empty && TxtProducto.Text != string.Empty)
             {
-
-                if (TxtCategoria.Text != string.Empty && TxtProducto.Text != string.Empty)
-                {
-                    ConsultaSql += " WHERE IdProducto = " + TxtProducto.Text + " AND IdCategoría = " + TxtCategoria.Text;
-                    CargarTabla(ConsultaSql);
-                }
-                else
-                {
-
-                    if (TxtProducto.Text != string.Empty)
-                    {
-                        ConsultaSql += " WHERE IdProducto = " + TxtProducto.Text;
-                        CargarTabla(ConsultaSql);
-                    }
-                    if (TxtCategoria.Text != string.Empty)
-                    {
-                        ConsultaSql += " WHERE IdCategoría = " + TxtCategoria.Text;
-                        CargarTabla(ConsultaSql);
-                    }
-               
-
-                }
+                ConsultaSql += " WHERE IdProducto = " + TxtProducto.Text + " AND IdCategoría = " + TxtCategoria.Text;
+                CargarTabla(ConsultaSql);
             }
             else
             {
-                if (TxtProducto.Text != string.Empty && tipoFiltro == ">")
+
+                if (TxtProducto.Text != string.Empty && tipoFiltroProducto == "=")
                 {
-                    ConsultaSql += " WHERE IdProducto > " + TxtProducto.Text;
+                    ConsultaSql += " WHERE IdProducto = " + TxtProducto.Text;
                     CargarTabla(ConsultaSql);
                 }
+                if (TxtCategoria.Text != string.Empty && tipoFiltroCategoria == "=")
+                {
+                    ConsultaSql += " WHERE IdCategoría = " + TxtCategoria.Text;
+                    CargarTabla(ConsultaSql);
+                }
+               
+
+            }
+            if (TxtProducto.Text != string.Empty && TxtCategoria.Text == string.Empty && tipoFiltroProducto == ">")
+            {
+                ConsultaSql += " WHERE IdProducto > " + TxtProducto.Text;
+                CargarTabla(ConsultaSql);
+            }
+
+            if(TxtCategoria.Text != string.Empty && TxtProducto.Text == string.Empty && tipoFiltroCategoria == ">")
+            {
+                ConsultaSql += " WHERE IdCategoría > " + TxtCategoria.Text;
+                CargarTabla(ConsultaSql);
             }
         }
 

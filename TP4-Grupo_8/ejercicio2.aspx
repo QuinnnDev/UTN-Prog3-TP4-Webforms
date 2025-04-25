@@ -91,6 +91,7 @@
                                 <td class="auto-style6">
                                     <asp:DropDownList ID="DdlCategoria" runat="server">
                                         <asp:ListItem Value="=">Igual a:</asp:ListItem>
+                                        <asp:ListItem Value="&gt;">Mayor a:</asp:ListItem>
                                     </asp:DropDownList>
                                 </td>
                                 <td>
@@ -99,7 +100,7 @@
                             </tr>
                         </table>
                     </td>
-                    <td class="auto-style4"></td>
+                    <td class="auto-style4">&nbsp;</td>
                     <td class="auto-style4"></td>
                     <td class="auto-style4"></td>
                     <td class="auto-style4"></td>
