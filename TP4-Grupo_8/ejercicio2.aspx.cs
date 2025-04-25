@@ -130,6 +130,10 @@ namespace TP4_Grupo_8
             }
 
             CargarTabla(consultaSQL);
+
+            TxtProducto.Text = string.Empty;
+            TxtCategoria.Text = string.Empty;
+
         }
 
         protected void TxtProducto_TextChanged(object sender, EventArgs e)
