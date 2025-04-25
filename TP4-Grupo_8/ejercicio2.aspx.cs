@@ -63,13 +63,7 @@ namespace TP4_Grupo_8
             {
                 if (TxtProducto.Text != string.Empty && tipoFiltroProducto == "=")
                 {
-                    ConsultaSql += " WHERE IdProducto = " + TxtProducto.Text;
-                    CargarTabla(ConsultaSql);
-                }
-                if (TxtCategoria.Text != string.Empty && tipoFiltroCategoria == "=")
-                {
-                    ConsultaSql += " WHERE IdCategoría = " + TxtCategoria.Text;
-                    CargarTabla(ConsultaSql);
+                condiciones.Add($"IdCategoría {operadorCategoria} {filtroCategoria}");
                 }
             }
             if(TxtCategoria.Text != string.Empty && TxtProducto.Text != string.Empty && tipoFiltroCategoria == ">" && tipoFiltroProducto == ">")
