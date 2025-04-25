@@ -30,7 +30,6 @@ namespace TP4_Grupo_8
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-
             if (!Page.IsPostBack)
             {
                 CargarTabla();
@@ -48,20 +47,20 @@ namespace TP4_Grupo_8
         }
 
         // Este es posiblemente el peor código que leí en mi vida
+        // Si, confirmo.
         protected void BtnFiltrar_Click(object sender, EventArgs e)
         {
             string ConsultaSql = "SELECT * FROM Productos";
             string tipoFiltroProducto = DdlProducto.SelectedValue;
             string tipoFiltroCategoria = DdlCategoria.SelectedValue;
 
-            if (TxtCategoria.Text != string.Empty && TxtProducto.Text != string.Empty)
+            if (TxtCategoria.Text != string.Empty && TxtProducto.Text != string.Empty && tipoFiltroCategoria == "=" && tipoFiltroProducto == "=")
             {
                 ConsultaSql += " WHERE IdProducto = " + TxtProducto.Text + " AND IdCategoría = " + TxtCategoria.Text;
                 CargarTabla(ConsultaSql);
             }
             else
             {
-
                 if (TxtProducto.Text != string.Empty && tipoFiltroProducto == "=")
                 {
                     ConsultaSql += " WHERE IdProducto = " + TxtProducto.Text;
@@ -72,19 +71,26 @@ namespace TP4_Grupo_8
                     ConsultaSql += " WHERE IdCategoría = " + TxtCategoria.Text;
                     CargarTabla(ConsultaSql);
                 }
-               
+            }
+            if(TxtCategoria.Text != string.Empty && TxtProducto.Text != string.Empty && tipoFiltroCategoria == ">" && tipoFiltroProducto == ">")
+            {
+                ConsultaSql += " WHERE IdProducto > " + TxtProducto.Text + " AND IdCategoría >" + TxtCategoria.Text;
+                CargarTabla(ConsultaSql);
 
             }
-            if (TxtProducto.Text != string.Empty && TxtCategoria.Text == string.Empty && tipoFiltroProducto == ">")
+            else
             {
-                ConsultaSql += " WHERE IdProducto > " + TxtProducto.Text;
-                CargarTabla(ConsultaSql);
-            }
+                if (TxtProducto.Text != string.Empty && TxtCategoria.Text == string.Empty && tipoFiltroProducto == ">")
+                {
+                    ConsultaSql += " WHERE IdProducto > " + TxtProducto.Text;
+                    CargarTabla(ConsultaSql);
+                }
 
-            if(TxtCategoria.Text != string.Empty && TxtProducto.Text == string.Empty && tipoFiltroCategoria == ">")
-            {
-                ConsultaSql += " WHERE IdCategoría > " + TxtCategoria.Text;
-                CargarTabla(ConsultaSql);
+                if (TxtCategoria.Text != string.Empty && TxtProducto.Text == string.Empty && tipoFiltroCategoria == ">")
+                {
+                    ConsultaSql += " WHERE IdCategoría > " + TxtCategoria.Text;
+                    CargarTabla(ConsultaSql);
+                }
             }
         }
 
