@@ -48,44 +48,74 @@ namespace TP4_Grupo_8
 
         // Este es posiblemente el peor código que leí en mi vida
         // Si, confirmo.
+        //protected void BtnFiltrar_Click(object sender, EventArgs e)
+        //{
+        //    string ConsultaSql = "SELECT * FROM Productos";
+        //    string tipoFiltroProducto = DdlProducto.SelectedValue;
+        //    string tipoFiltroCategoria = DdlCategoria.SelectedValue;
+
+        //    if (TxtCategoria.Text != string.Empty && TxtProducto.Text != string.Empty && tipoFiltroCategoria == "=" && tipoFiltroProducto == "=")
+        //    {
+        //        ConsultaSql += " WHERE IdProducto = " + TxtProducto.Text + " AND IdCategoría = " + TxtCategoria.Text;
+        //        CargarTabla(ConsultaSql);
+        //    }
+        //    else
+        //    {
+        //        if (TxtProducto.Text != string.Empty && tipoFiltroProducto == "=")
+        //        {
+        //        condiciones.Add($"IdCategoría {operadorCategoria} {filtroCategoria}");
+        //        }
+        //    }
+        //    if(TxtCategoria.Text != string.Empty && TxtProducto.Text != string.Empty && tipoFiltroCategoria == ">" && tipoFiltroProducto == ">")
+        //    {
+        //        ConsultaSql += " WHERE IdProducto > " + TxtProducto.Text + " AND IdCategoría >" + TxtCategoria.Text;
+        //        CargarTabla(ConsultaSql);
+
+        //    }
+        //    else
+        //    {
+        //        if (TxtProducto.Text != string.Empty && TxtCategoria.Text == string.Empty && tipoFiltroProducto == ">")
+        //        {
+        //            ConsultaSql += " WHERE IdProducto > " + TxtProducto.Text;
+        //            CargarTabla(ConsultaSql);
+        //        }
+
+        //        if (TxtCategoria.Text != string.Empty && TxtProducto.Text == string.Empty && tipoFiltroCategoria == ">")
+        //        {
+        //            ConsultaSql += " WHERE IdCategoría > " + TxtCategoria.Text;
+        //            CargarTabla(ConsultaSql);
+        //        }
+        //    }
+        //}
+
         protected void BtnFiltrar_Click(object sender, EventArgs e)
         {
             string ConsultaSql = "SELECT * FROM Productos";
+
+            string filtroProducto = TxtProducto.Text;
+            string filtroCategoria = TxtCategoria.Text;
+
             string tipoFiltroProducto = DdlProducto.SelectedValue;
             string tipoFiltroCategoria = DdlCategoria.SelectedValue;
 
-            if (TxtCategoria.Text != string.Empty && TxtProducto.Text != string.Empty && tipoFiltroCategoria == "=" && tipoFiltroProducto == "=")
-            {
-                ConsultaSql += " WHERE IdProducto = " + TxtProducto.Text + " AND IdCategoría = " + TxtCategoria.Text;
-                CargarTabla(ConsultaSql);
-            }
-            else
-            {
-                if (TxtProducto.Text != string.Empty && tipoFiltroProducto == "=")
-                {
-                condiciones.Add($"IdCategoría {operadorCategoria} {filtroCategoria}");
-                }
-            }
-            if(TxtCategoria.Text != string.Empty && TxtProducto.Text != string.Empty && tipoFiltroCategoria == ">" && tipoFiltroProducto == ">")
-            {
-                ConsultaSql += " WHERE IdProducto > " + TxtProducto.Text + " AND IdCategoría >" + TxtCategoria.Text;
-                CargarTabla(ConsultaSql);
+            List<string> condicion = new List<string>();
 
-            }
-            else
+            if (!string.IsNullOrEmpty(filtroProducto))
             {
-                if (TxtProducto.Text != string.Empty && TxtCategoria.Text == string.Empty && tipoFiltroProducto == ">")
-                {
-                    ConsultaSql += " WHERE IdProducto > " + TxtProducto.Text;
-                    CargarTabla(ConsultaSql);
-                }
-
-                if (TxtCategoria.Text != string.Empty && TxtProducto.Text == string.Empty && tipoFiltroCategoria == ">")
-                {
-                    ConsultaSql += " WHERE IdCategoría > " + TxtCategoria.Text;
-                    CargarTabla(ConsultaSql);
-                }
+                condicion.Add($"IdProducto {tipoFiltroProducto} {filtroProducto}");
             }
+
+            if (!string.IsNullOrEmpty(filtroCategoria))
+            {
+                condicion.Add($"IdCategoría {tipoFiltroCategoria} {filtroCategoria}");
+            }
+
+            if (condicion.Count > 0)
+            {
+                ConsultaSql += " WHERE " + string.Join(" AND ", condicion);
+            }
+
+            CargarTabla(ConsultaSql);
         }
 
         protected void TxtProducto_TextChanged(object sender, EventArgs e)

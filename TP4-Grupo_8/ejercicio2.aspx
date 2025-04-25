@@ -69,6 +69,7 @@
                                     <asp:DropDownList ID="DdlProducto" runat="server">
                                         <asp:ListItem Value="=">Igual a:</asp:ListItem>
                                         <asp:ListItem Value="&gt;">Mayor a:</asp:ListItem>
+                                        <asp:ListItem Value="&lt;">Menor a:</asp:ListItem>
                                     </asp:DropDownList>
                                 </td>
                                 <td>
@@ -92,6 +93,7 @@
                                     <asp:DropDownList ID="DdlCategoria" runat="server">
                                         <asp:ListItem Value="=">Igual a:</asp:ListItem>
                                         <asp:ListItem Value="&gt;">Mayor a:</asp:ListItem>
+                                        <asp:ListItem Value="&lt;">Menor a:</asp:ListItem>
                                     </asp:DropDownList>
                                 </td>
                                 <td>
