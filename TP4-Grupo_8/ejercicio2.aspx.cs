@@ -14,19 +14,33 @@ namespace TP4_Grupo_8
         string consultaSQL = "SELECT IdProducto, NombreProducto, IdCategoría, CantidadPorUnidad, PrecioUnidad FROM Productos";
         private void CargarTabla(string consultaSQL)
         {
-            SqlConnection connection = new SqlConnection(conexion);
-            connection.Open();
+            try
+            {
+                lblMensaje.Text = "";
 
-            SqlCommand cmd = new SqlCommand(consultaSQL, connection);
-            SqlDataReader reader = cmd.ExecuteReader();
+                SqlConnection connection = new SqlConnection(conexion);
+                connection.Open();
+
+                SqlCommand cmd = new SqlCommand(consultaSQL, connection);
+                SqlDataReader reader = cmd.ExecuteReader();
 
 
-            gvTablaProductos.DataSource = reader;
-            gvTablaProductos.DataBind();
+                gvTablaProductos.DataSource = reader;
+                gvTablaProductos.DataBind();
 
 
 
-            connection.Close();
+                connection.Close();
+
+            }
+            catch (Exception)
+            {
+
+                lblMensaje.Text = "Ocurrio un error inesperado </br> No se pudo cargar la tabla correctamente";
+                gvTablaProductos.DataSource = null;
+                gvTablaProductos.DataBind();
+            }
+
         }
         protected void Page_Load(object sender, EventArgs e)
         {

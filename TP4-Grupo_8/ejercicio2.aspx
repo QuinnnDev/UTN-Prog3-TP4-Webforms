@@ -29,6 +29,13 @@
         .auto-style7 {
             width: 104px;
         }
+        .auto-style8 {
+            width: 308px;
+        }
+        .auto-style9 {
+            height: 23px;
+            width: 308px;
+        }
     </style>
 </head>
 <body>
@@ -37,7 +44,7 @@
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style8">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
@@ -46,7 +53,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
-                    <td>
+                    <td class="auto-style8">
                         <table class="auto-style1">
                             <tr>
                                 <td class="auto-style5">&nbsp;</td>
@@ -62,7 +69,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style2">ID Producto:</td>
-                    <td>
+                    <td class="auto-style8">
                         <table class="auto-style1">
                             <tr>
                                 <td class="auto-style6">
@@ -86,7 +93,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style3">ID Categoria</td>
-                    <td class="auto-style4">
+                    <td class="auto-style9">
                         <table class="auto-style1">
                             <tr>
                                 <td class="auto-style6">
@@ -110,7 +117,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
-                    <td>
+                    <td class="auto-style8">
                         <table class="auto-style1">
                             <tr>
                                 <td class="auto-style7">&nbsp;</td>
@@ -121,7 +128,9 @@
                             </tr>
                         </table>
                     </td>
-                    <td>&nbsp;</td>
+                    <td>
+                        <asp:Label ID="lblMensaje" runat="server"></asp:Label>
+                    </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
@@ -129,7 +138,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
-                    <td>
+                    <td class="auto-style8">
                         <asp:GridView ID="gvTablaProductos" runat="server">
                         </asp:GridView>
                     </td>
@@ -141,7 +150,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style8">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
