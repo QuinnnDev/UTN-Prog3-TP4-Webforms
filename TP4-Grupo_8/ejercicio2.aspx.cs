@@ -11,8 +11,8 @@ namespace TP4_Grupo_8
     public partial class ejercicio2 : System.Web.UI.Page
     {
         string conexion = "Data Source=localhost\\sqlexpress;Initial Catalog=Neptuno;Integrated Security = True;Encrypt=False";
-        
-        private void CargarTabla(string consultaSQL = "SELECT * FROM Productos")
+        string consultaSQL = "SELECT IdProducto, NombreProducto, IdCategoría, CantidadPorUnidad, PrecioUnidad FROM Productos";
+        private void CargarTabla(string consultaSQL)
         {
             SqlConnection connection = new SqlConnection(conexion);
             connection.Open();
@@ -32,16 +32,16 @@ namespace TP4_Grupo_8
         {
             if (!Page.IsPostBack)
             {
-                CargarTabla();
+                CargarTabla(consultaSQL);
             }
 
         }
 
         protected void BtnQuitar_Click(object sender, EventArgs e)
         {
-            string ConsultaSql = "SELECT * FROM Productos";
+            // string ConsultaSql = "SELECT IdProducto, NombreProducto, IdCategoría, CantidadPorUnidad, PrecioUnidad FROM Productos";
 
-            CargarTabla(ConsultaSql);
+            CargarTabla(consultaSQL);
             TxtCategoria.Text = "";
             TxtProducto.Text = "";
         }
@@ -90,7 +90,7 @@ namespace TP4_Grupo_8
 
         protected void BtnFiltrar_Click(object sender, EventArgs e)
         {
-            string ConsultaSql = "SELECT * FROM Productos";
+            //string ConsultaSql = "SELECT IdProducto, NombreProducto, IdCategoría, CantidadPorUnidad, PrecioUnidad FROM Productos";
 
             string filtroProducto = TxtProducto.Text;
             string filtroCategoria = TxtCategoria.Text;
@@ -112,10 +112,10 @@ namespace TP4_Grupo_8
 
             if (condicion.Count > 0)
             {
-                ConsultaSql += " WHERE " + string.Join(" AND ", condicion);
+                consultaSQL += " WHERE " + string.Join(" AND ", condicion);
             }
 
-            CargarTabla(ConsultaSql);
+            CargarTabla(consultaSQL);
         }
 
         protected void TxtProducto_TextChanged(object sender, EventArgs e)

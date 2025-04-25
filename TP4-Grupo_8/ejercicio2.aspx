@@ -73,7 +73,7 @@
                                     </asp:DropDownList>
                                 </td>
                                 <td>
-                                    <asp:TextBox ID="TxtProducto" runat="server" OnTextChanged="TxtProducto_TextChanged"></asp:TextBox>
+                                    <asp:TextBox ID="TxtProducto" runat="server" OnTextChanged="TxtProducto_TextChanged" TextMode="Number"></asp:TextBox>
                                 </td>
                             </tr>
                         </table>
@@ -97,7 +97,7 @@
                                     </asp:DropDownList>
                                 </td>
                                 <td>
-                                    <asp:TextBox ID="TxtCategoria" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="TxtCategoria" runat="server" TextMode="Number"></asp:TextBox>
                                 </td>
                             </tr>
                         </table>
