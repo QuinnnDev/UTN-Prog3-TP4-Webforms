@@ -77,7 +77,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style2">
-                        <asp:LinkButton ID="linkVerTemas" runat="server">Ver temas</asp:LinkButton>
+                        <asp:LinkButton ID="linkVerTemas" runat="server" OnClick="linkVerTemas_Click">Ver temas</asp:LinkButton>
                     </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>

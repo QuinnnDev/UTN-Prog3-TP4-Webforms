@@ -38,5 +38,11 @@ namespace TP4_Grupo_8
                 connection.Close();
             }
         }
+
+        protected void linkVerTemas_Click(object sender, EventArgs e)
+        {
+            string idTema = ddlTemas.SelectedValue;
+            Response.Redirect("ListadoLibros.aspx");
+        }
     }
 }
