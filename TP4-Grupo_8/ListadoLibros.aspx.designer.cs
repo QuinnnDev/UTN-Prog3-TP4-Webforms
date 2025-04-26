@@ -42,21 +42,12 @@ namespace TP4_Grupo_8
         protected global::System.Web.UI.WebControls.GridView gvLibros;
 
         /// <summary>
-        /// Control linkVerTemas.
+        /// Control linkConsultar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton linkConsultar;
-
-        /// <summary>
-        /// Control lblTestVariable.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTestVariable;
     }
 }

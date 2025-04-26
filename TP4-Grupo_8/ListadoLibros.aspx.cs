@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -12,7 +13,15 @@ namespace TP4_Grupo_8
 		protected void Page_Load(object sender, EventArgs e)
 		{
 
-            lblTestVariable.Text = ((DropDownList)PreviousPage.FindControl("ddlTemas")).SelectedValue;
+            string conexion = "Data Source=localhost\\sqlexpress;Initial Catalog=Libreria;Integrated Security = True;Encrypt=False";
+            string tema = ((DropDownList)PreviousPage.FindControl("ddlTemas")).SelectedValue;
+
+            SqlConnection connection = new SqlConnection(conexion);
+            connection.Open();
+
+
+
+            connection.Close();
 
 
         }
