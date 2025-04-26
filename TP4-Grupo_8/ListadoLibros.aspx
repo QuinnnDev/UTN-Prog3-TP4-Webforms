@@ -38,7 +38,7 @@
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>
-                        <asp:Label ID="lblTestVariable" runat="server" Text="no identificado"></asp:Label>
+                        <asp:Label ID="lblTestVariable" runat="server" Text="reemplazarPorVariable"></asp:Label>
                     </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
