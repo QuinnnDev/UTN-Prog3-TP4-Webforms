@@ -12,16 +12,27 @@ namespace TP4_Grupo_8
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
+            if (!IsPostBack)
+            {
+                string stringConexion = "Data Source=localhost\\sqlexpress;Initial Catalog=Libreria;Integrated Security = True;Encrypt=False";
+                string tema = ((DropDownList)PreviousPage.FindControl("ddlTemas")).SelectedValue;
+                string consultaSql = "Select l.IdLibro, l.IdTema, l.Titulo, l.Precio, l.Precio FROM Libros l WHERE IdTema = " + tema;
 
-            string conexion = "Data Source=localhost\\sqlexpress;Initial Catalog=Libreria;Integrated Security = True;Encrypt=False";
-            string tema = ((DropDownList)PreviousPage.FindControl("ddlTemas")).SelectedValue;
+                SqlConnection connection = new SqlConnection(stringConexion);
+                connection.Open();
 
-            SqlConnection connection = new SqlConnection(conexion);
-            connection.Open();
+                SqlCommand command = new SqlCommand(consultaSql, connection);
+
+                SqlDataReader reader = command.ExecuteReader();
+
+
+                gvLibros.DataSource = reader;
+                gvLibros.DataBind();
 
 
 
-            connection.Close();
+                connection.Close();
+            }
 
 
         }
