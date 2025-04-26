@@ -16,7 +16,7 @@ namespace TP4_Grupo_8
             {
                 string stringConexion = "Data Source=localhost\\sqlexpress;Initial Catalog=Libreria;Integrated Security = True;Encrypt=False";
                 string tema = ((DropDownList)PreviousPage.FindControl("ddlTemas")).SelectedValue;
-                string consultaSql = "Select l.IdLibro, l.IdTema, l.Titulo, l.Precio, l.Precio FROM Libros l WHERE IdTema = " + tema;
+                string consultaSql = "Select l.IdLibro as [Id del Libro], l.IdTema as [Id del Tema], l.Titulo as [Título], l.Precio, l.Autor FROM Libros l WHERE IdTema = " + tema;
 
                 SqlConnection connection = new SqlConnection(stringConexion);
                 connection.Open();
@@ -26,10 +26,6 @@ namespace TP4_Grupo_8
 
                 gvLibros.DataSource = reader;
                 gvLibros.DataBind();
-
-
-
-
 
                 connection.Close();
             }
