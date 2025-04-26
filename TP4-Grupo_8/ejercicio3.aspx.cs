@@ -10,7 +10,7 @@ namespace TP4_Grupo_8
 {
     public partial class ejercicio3 : System.Web.UI.Page
     {
-        string conexion = "Data Source=localhost\\sqlexpress01;Initial Catalog=Libreria;Integrated Security = True;Encrypt=False";
+        string conexion = "Data Source=localhost\\sqlexpress;Initial Catalog=Libreria;Integrated Security = True;Encrypt=False";
         string consultaSQL = "SELECT IdTema FROM Libros GROUP BY IdTema";
         protected void Page_Load(object sender, EventArgs e)
         {
