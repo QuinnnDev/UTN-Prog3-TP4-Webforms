@@ -14,6 +14,8 @@ namespace TP4_Grupo_8
         string consultaSQL = "SELECT IdTema FROM Libros GROUP BY IdTema";
         protected void Page_Load(object sender, EventArgs e)
         {
+            ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
+
             if (!Page.IsPostBack) 
             {
                 SqlConnection connection = new SqlConnection(conexion);
@@ -23,6 +25,8 @@ namespace TP4_Grupo_8
                 SqlDataReader reader = cmd.ExecuteReader();
 
                 List<ListItem> items = new List<ListItem>();
+
+                items.Add(new ListItem("-Seleccione un tema-", "0"));
 
                 while (reader.Read())
                 {
@@ -40,9 +44,9 @@ namespace TP4_Grupo_8
         }
 
         protected void linkVerTemas_Click(object sender, EventArgs e)
-        {
-            string idTema = ddlTemas.SelectedValue;
-            Server.Transfer("ListadoLibros.aspx");
+        {  
+                string idTema = ddlTemas.SelectedValue;
+                Server.Transfer("ListadoLibros.aspx");
         }
     }
 }
