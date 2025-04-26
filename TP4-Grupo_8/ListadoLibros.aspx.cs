@@ -26,8 +26,6 @@ namespace TP4_Grupo_8
                 SqlDataReader reader = command.ExecuteReader();
 
 
-                gvLibros.DataSource = reader;
-                gvLibros.DataBind();
 
 
 
