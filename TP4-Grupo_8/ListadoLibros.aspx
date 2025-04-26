@@ -64,7 +64,7 @@
                 <tr>
                     <td>&nbsp;</td>
                     <td>
-                        <asp:LinkButton ID="linkConsultar" runat="server">Consultar otro tema</asp:LinkButton>
+                        <asp:LinkButton ID="linkConsultar" runat="server" OnClick="linkConsultar_Click">Consultar otro tema</asp:LinkButton>
                     </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>

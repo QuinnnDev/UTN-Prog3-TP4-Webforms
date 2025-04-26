@@ -22,8 +22,10 @@ namespace TP4_Grupo_8
                 connection.Open();
 
                 SqlCommand command = new SqlCommand(consultaSql, connection);
-
                 SqlDataReader reader = command.ExecuteReader();
+
+                gvLibros.DataSource = reader;
+                gvLibros.DataBind();
 
 
 
@@ -34,5 +36,10 @@ namespace TP4_Grupo_8
 
 
         }
-	}
+
+        protected void linkConsultar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ejercicio3.aspx");
+        }
+    }
 }
