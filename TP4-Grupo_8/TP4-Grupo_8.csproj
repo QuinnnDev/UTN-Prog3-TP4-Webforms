@@ -72,6 +72,7 @@
     <Content Include="ejercicio3.aspx" />
     <Content Include="Web.config" />
     <Content Include="paginPrincipal.aspx" />
+    <Content Include="ListadoLibros.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ejercicio1.aspx.cs">
@@ -102,6 +103,13 @@
     </Compile>
     <Compile Include="paginPrincipal.aspx.designer.cs">
       <DependentUpon>paginPrincipal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListadoLibros.aspx.cs">
+      <DependentUpon>ListadoLibros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListadoLibros.aspx.designer.cs">
+      <DependentUpon>ListadoLibros.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
