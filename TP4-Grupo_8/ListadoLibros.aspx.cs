@@ -32,14 +32,15 @@ namespace TP4_Grupo_8
                             gvLibros.DataSource = reader;
                             gvLibros.DataBind();
                         }
-                        catch (SqlException ex)
+                        catch (SqlException)
                         {
 
-                            lblerror.Text = ex.Message + "hubo un error con la base de datos";
+                            lblerror.Text = "hubo un error con la base de datos";
                         }
-                        catch (Exception ex)
-                        {
-                            lblerror.Text = ex.Message + "hubo un error";
+                        catch (Exception) 
+                        { 
+                        
+                            lblerror.Text = "hubo un error";
                         }
                         finally { if (connection != null) { connection.Close(); } }
 
