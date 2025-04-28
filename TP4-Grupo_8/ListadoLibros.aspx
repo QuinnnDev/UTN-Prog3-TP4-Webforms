@@ -44,7 +44,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style2"></td>
-                    <td class="auto-style2"></td>
+                    <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style2">
                     </td>
                     <td class="auto-style2"></td>
@@ -54,7 +54,9 @@
                 </tr>
                 <tr>
                     <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td>
+                        <asp:Label ID="lblerror" runat="server" Font-Bold="True" Font-Italic="False" Font-Size="X-Large" ForeColor="Red"></asp:Label>
+                    </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>

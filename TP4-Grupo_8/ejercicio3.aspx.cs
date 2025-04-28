@@ -19,14 +19,15 @@ namespace TP4_Grupo_8
             if (!Page.IsPostBack) 
             {
                 SqlConnection connection = new SqlConnection(conexion);
-                connection.Open();
+                try
+                {
+                    connection.Open();
+                    SqlCommand cmd = new SqlCommand(consultaSQL, connection);
+                    SqlDataReader reader = cmd.ExecuteReader();
 
-                SqlCommand cmd = new SqlCommand(consultaSQL, connection);
-                SqlDataReader reader = cmd.ExecuteReader();
+                    List<ListItem> items = new List<ListItem>();
 
-                List<ListItem> items = new List<ListItem>();
-
-                items.Add(new ListItem("-Seleccione un tema-", "0"));
+                    items.Add(new ListItem("-Seleccione un tema-", "0"));
 
                 while (reader.Read())
                 {
@@ -39,7 +40,18 @@ namespace TP4_Grupo_8
                 ddlTemas.DataValueField = "Value";
                 ddlTemas.DataBind();
 
-                connection.Close();
+                }
+                catch (SqlException)
+                {
+
+                    lblerror1.Text = "hubo un error con la base de datos";
+                }
+                catch (Exception)
+                {
+                    lblerror1.Text = "hubo un error";
+                }
+                finally { if (connection != null) { connection.Close(); } }
+
             }
         }
 

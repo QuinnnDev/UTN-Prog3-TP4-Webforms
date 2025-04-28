@@ -85,7 +85,9 @@
                         <asp:LinkButton ID="linkVerTemas" runat="server" OnClick="linkVerTemas_Click">Ver temas</asp:LinkButton>
                     </td>
                     <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td>
+                        <asp:Label ID="lblerror1" runat="server" Font-Bold="True" Font-Size="Large" ForeColor="Red"></asp:Label>
+                    </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>

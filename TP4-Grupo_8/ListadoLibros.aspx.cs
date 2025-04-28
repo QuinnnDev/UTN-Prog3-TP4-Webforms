@@ -12,25 +12,42 @@ namespace TP4_Grupo_8
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
-            if (!IsPostBack)
-            {
-                string stringConexion = "Data Source=localhost\\sqlexpress;Initial Catalog=Libreria;Integrated Security = True;Encrypt=False";
-                string tema = ((DropDownList)PreviousPage.FindControl("ddlTemas")).SelectedValue;
-                string consultaSql = "Select l.IdLibro as [Id del Libro], l.IdTema as [Id del Tema], l.Titulo as [Título], l.Precio, l.Autor FROM Libros l WHERE IdTema = " + tema;
+            
+            
+                if (!IsPostBack)
+                {
+                    string stringConexion = "Data Source=localhost\\sqlexpress;Initial Catalog=Libreria;Integrated Security = True;Encrypt=False";
+                    string tema = ((DropDownList)PreviousPage.FindControl("ddlTemas")).SelectedValue;
+                    string consultaSql = "Select l.IdLibro as [Id del Libro], l.IdTema as [Id del Tema], l.Titulo as [Título], l.Precio, l.Autor FROM Libros l WHERE IdTema = " + tema;
 
-                SqlConnection connection = new SqlConnection(stringConexion);
-                connection.Open();
+                    SqlConnection connection = new SqlConnection(stringConexion);
+                    
 
-                SqlCommand command = new SqlCommand(consultaSql, connection);
-                SqlDataReader reader = command.ExecuteReader();
+                        try
+                        {
+                            connection.Open();
+                            SqlCommand command = new SqlCommand(consultaSql, connection);
+                            SqlDataReader reader = command.ExecuteReader();
 
-                gvLibros.DataSource = reader;
-                gvLibros.DataBind();
+                            gvLibros.DataSource = reader;
+                            gvLibros.DataBind();
+                        }
+                        catch (SqlException ex)
+                        {
 
-                connection.Close();
+                            lblerror.Text = ex.Message + "hubo un error con la base de datos";
+                        }
+                        catch (Exception ex)
+                        {
+                            lblerror.Text = ex.Message + "hubo un error";
+                        }
+                        finally { if (connection != null) { connection.Close(); } }
+
+
+
+
             }
-
-
+           
         }
 
         protected void linkConsultar_Click(object sender, EventArgs e)
