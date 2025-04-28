@@ -71,7 +71,7 @@
     <Content Include="ejercicio2.aspx" />
     <Content Include="ejercicio3.aspx" />
     <Content Include="Web.config" />
-    <Content Include="paginPrincipal.aspx" />
+    <Content Include="paginaPrincipal.aspx" />
     <Content Include="ListadoLibros.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -97,12 +97,12 @@
       <DependentUpon>ejercicio3.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="paginPrincipal.aspx.cs">
-      <DependentUpon>paginPrincipal.aspx</DependentUpon>
+    <Compile Include="paginaPrincipal.aspx.cs">
+      <DependentUpon>paginaPrincipal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="paginPrincipal.aspx.designer.cs">
-      <DependentUpon>paginPrincipal.aspx</DependentUpon>
+    <Compile Include="paginaPrincipal.aspx.designer.cs">
+      <DependentUpon>paginaPrincipal.aspx</DependentUpon>
     </Compile>
     <Compile Include="ListadoLibros.aspx.cs">
       <DependentUpon>ListadoLibros.aspx</DependentUpon>
